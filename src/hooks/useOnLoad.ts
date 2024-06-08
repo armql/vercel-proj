@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 export default function useOnLoad(value: number) {
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, [value]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, value);
 
-        return () => clearTimeout(timer);
-    }, []);
+    return () => clearTimeout(timer);
+  }, [value]);
 
-    return { loading };
+  return { loading };
 }
