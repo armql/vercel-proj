@@ -8,15 +8,6 @@ const Footer = lazy(() => import("../components/Footer.tsx"));
 
 function DefaultLayout() {
   const { loading } = useOnLoad(1800);
-  const [showFooter, setShowFooter] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowFooter(true);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   if (loading) {
     return <SplashScreen />;

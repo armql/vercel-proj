@@ -7,6 +7,9 @@ import shape06 from "../../../assets/card-shapes/06.svg";
 import shape07 from "../../../assets/card-shapes/07.svg";
 import shape08 from "../../../assets/card-shapes/08.svg";
 import shape09 from "../../../assets/card-shapes/09.svg";
+import shape10 from "../../../assets/card-shapes/10.svg";
+import shape11 from "../../../assets/card-shapes/11.svg";
+import shape12 from "../../../assets/card-shapes/12.svg";
 
 const product_data = [
   {

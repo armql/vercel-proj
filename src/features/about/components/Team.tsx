@@ -17,7 +17,7 @@ interface TeamData {
 }
 export default function Team() {
   const [selected, setSelected] = useState("Leadership");
-  const containerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
   const [scrollLeft, setScrollLeft] = useState(0);
