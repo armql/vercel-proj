@@ -31,7 +31,13 @@ const shapeMap = {
   shape12,
 };
 
-export default function Card({ response }: { response: any }) {
+type ResponseType = {
+  card_shape: string;
+  label: string;
+  type: string;
+};
+
+export default function Card({ response }: { response: ResponseType }) {
   const [averageRating, setAverageRating] = useState(0);
   const { effect: theme, open, close } = useToggle();
 
@@ -39,17 +45,6 @@ export default function Card({ response }: { response: any }) {
     const average = calculateAverageRating(response.reviews);
     setAverageRating(average);
   }, [response]);
-
-  // const getProductFromProductData = (productId: string) => {
-  //     for (const category of product_data) {
-  //         for (const product of category.products) {
-  //             if (product.id === productId) {
-  //                 return product;
-  //             }
-  //         }
-  //     }
-  //     return null;
-  // };
 
   return (
     <Fragment>
@@ -126,6 +121,7 @@ export default function Card({ response }: { response: any }) {
           <div className="absolute right-0 top-0 z-20 p-4">
             <button
               type="button"
+              title="Close"
               onClick={close}
               className="cursor-pointer rounded-full bg-white bg-opacity-20 p-2 text-white hover:bg-opacity-30"
             >
