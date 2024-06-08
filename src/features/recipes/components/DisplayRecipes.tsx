@@ -91,7 +91,18 @@ export default function DisplayRecipes() {
         </div>
       ) : (
         <Fragment>
-          <Tab categories={categories} />
+          <Tab
+            categories={
+              Array.isArray(categories)
+                ? categories.filter(
+                    (category) =>
+                      category &&
+                      typeof category.id === "number" &&
+                      typeof category.name === "string"
+                  )
+                : []
+            }
+          />
           <div className="grid h-fit w-full xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1  gap-12 lg:px-0 px-12 items-center justify-center">
             {recipes &&
               recipes.map((recipe, index) => {
