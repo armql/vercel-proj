@@ -16,8 +16,6 @@ import { colorTheme } from "../utils/color-theme.ts";
 import { calculateAverageRating } from "../utils/calculate-averageRating.ts";
 import { Star, X } from "@phosphor-icons/react";
 
-const shape01 = "M0,100 C50,200 150,0 200,100 L200,0 L0,0 Z";
-
 type ShapeKey =
   | "shape01"
   | "shape02"
@@ -34,17 +32,17 @@ type ShapeKey =
 
 const shapeMap: Record<ShapeKey, string> = {
   shape01,
-  shape02: shape02,
-  shape03: shape03,
-  shape04: shape04,
-  shape05: shape05,
-  shape06: shape06,
-  shape07: shape07,
-  shape08: shape08,
-  shape09: shape09,
-  shape10: shape10,
-  shape11: shape11,
-  shape12: shape12,
+  shape02,
+  shape03,
+  shape04,
+  shape05,
+  shape06,
+  shape07,
+  shape08,
+  shape09,
+  shape10,
+  shape11,
+  shape12,
 };
 
 type ResponseType = {
@@ -54,6 +52,10 @@ type ResponseType = {
   moto: string;
   description: string;
   img: string;
+  reviews: {
+    id: number;
+    stars: number;
+  }[];
 };
 
 export default function Card({ response }: { response: ResponseType }) {

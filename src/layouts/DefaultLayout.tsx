@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar.tsx";
-import { Fragment, lazy, useEffect, useState } from "react";
+import { Fragment, lazy } from "react";
 import useOnLoad from "../hooks/useOnLoad.ts";
 import SplashScreen from "../components/SplashScreen.tsx";
 
