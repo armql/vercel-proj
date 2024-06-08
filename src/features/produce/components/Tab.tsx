@@ -1,6 +1,11 @@
 import { supabase } from "../../../client/supa.ts";
 import { useQuery } from "react-query";
 
+type Categories = {
+  id: number;
+  name: string;
+};
+
 export default function Tab({
   selectedTab,
   setSelectedTab,
@@ -21,7 +26,11 @@ export default function Tab({
     data: categories,
     isLoading,
     error,
-  } = useQuery("category_products", fetchCategories);
+  } = useQuery("category_products", fetchCategories) as {
+    data: Categories[];
+    isLoading: boolean;
+    error: Error | null;
+  };
 
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;

@@ -16,25 +16,44 @@ import { colorTheme } from "../utils/color-theme.ts";
 import { calculateAverageRating } from "../utils/calculate-averageRating.ts";
 import { Star, X } from "@phosphor-icons/react";
 
-const shapeMap = {
+const shape01 = "M0,100 C50,200 150,0 200,100 L200,0 L0,0 Z";
+
+type ShapeKey =
+  | "shape01"
+  | "shape02"
+  | "shape03"
+  | "shape04"
+  | "shape05"
+  | "shape06"
+  | "shape07"
+  | "shape08"
+  | "shape09"
+  | "shape10"
+  | "shape11"
+  | "shape12";
+
+const shapeMap: Record<ShapeKey, string> = {
   shape01,
-  shape02,
-  shape03,
-  shape04,
-  shape05,
-  shape06,
-  shape07,
-  shape08,
-  shape09,
-  shape10,
-  shape11,
-  shape12,
+  shape02: shape02,
+  shape03: shape03,
+  shape04: shape04,
+  shape05: shape05,
+  shape06: shape06,
+  shape07: shape07,
+  shape08: shape08,
+  shape09: shape09,
+  shape10: shape10,
+  shape11: shape11,
+  shape12: shape12,
 };
 
 type ResponseType = {
-  card_shape: string;
+  card_shape: ShapeKey;
   label: string;
   type: string;
+  moto: string;
+  description: string;
+  img: string;
 };
 
 export default function Card({ response }: { response: ResponseType }) {
